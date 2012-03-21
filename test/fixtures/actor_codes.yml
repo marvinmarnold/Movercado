@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  code: MyString
+  times_used: 1
+  user: 
+  app: 
+
+two:
+  code: MyString
+  times_used: 1
+  user: 
+  app: 

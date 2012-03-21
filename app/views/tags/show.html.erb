@@ -1,0 +1,12 @@
+<h1>Tag</h1>
+
+<p>
+  <b>Name</b><br>
+  <%= @tag.name %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', tags_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_tag_path(@tag), :class => 'btn' %>
+  <%= link_to 'Delete', tag_path(@tag), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

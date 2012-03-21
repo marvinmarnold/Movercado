@@ -1,0 +1,33 @@
+<% title "Applications" %>
+<h1><%= @title %></h1>
+<%= paginate @apps %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Created at</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>App code</th>
+      <th>Type</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @apps.each do |app| %>
+      <tr>
+      <td><%= app.created_at %></td>
+        <td><%= link_to app.name, app_path(app) %></td>
+        <td><%= app.description %></td>
+        <td><%= app.app_code %></td>
+        <td><%= titlize(app.type) %></td>
+        <td>
+          <%= link_to 'Edit', edit_app_path(app), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', app_path(app), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_app_path, :class => 'btn btn-primary' %>
+

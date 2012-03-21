@@ -1,0 +1,32 @@
+<h1>User App Var</h1>
+
+<p>
+  <b>Role</b><br>
+  <%= @user_app_var.role %>
+</p>
+
+<p>
+  <b>Times interacted</b><br>
+  <%= @user_app_var.times_interacted %>
+</p>
+
+<p>
+  <b>Validated times interacted</b><br>
+  <%= @user_app_var.validated_times_interacted %>
+</p>
+
+<p>
+  <b>User</b><br>
+  <%= @user_app_var.user_id %>
+</p>
+
+<p>
+  <b>App</b><br>
+  <%= @user_app_var.app_id %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', user_app_vars_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_user_app_var_path(@user_app_var), :class => 'btn' %>
+  <%= link_to 'Delete', user_app_var_path(@user_app_var), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

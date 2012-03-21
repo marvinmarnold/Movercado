@@ -1,0 +1,27 @@
+<h1>Actor Code</h1>
+
+<p>
+  <b>Code</b><br>
+  <%= @actor_code.code %>
+</p>
+
+<p>
+  <b>Times used</b><br>
+  <%= @actor_code.times_used %>
+</p>
+
+<p>
+  <b>User</b><br>
+  <%= @actor_code.user_id %>
+</p>
+
+<p>
+  <b>App</b><br>
+  <%= @actor_code.app_id %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', actor_codes_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_actor_code_path(@actor_code), :class => 'btn' %>
+  <%= link_to 'Delete', actor_code_path(@actor_code), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

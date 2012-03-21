@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  number: MyString
+  carrier: MyString
+  user: 
+
+two:
+  number: MyString
+  carrier: MyString
+  user: 

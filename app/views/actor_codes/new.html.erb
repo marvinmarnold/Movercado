@@ -1,0 +1,14 @@
+<%= simple_form_for @actor_code, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Actor Code</legend>
+    
+    <%= f.input :num_to_generate, :as => :integer %>
+    <%= f.association :user, :label_method => lambda { |user| "#{user.phones.first.number}"} %>
+    <%= f.association :app, :label_method => lambda { |app| "#{app.name}"} %>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', actor_codes_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

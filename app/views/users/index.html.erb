@@ -1,0 +1,38 @@
+<h1>Users</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Created at</th>
+    	<th>Num messages sent</th>
+    	<th>Num messages received</th>
+    	<th>Phone numbers</th>
+      <th>Birthday</th>
+      <th>Gender</th>
+      <th>Num children</th>
+      <th>Marital status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.created_at, user_path(user) %></td>
+        <td><%= user.sent_messages.length if user.sent_messages %></td>
+  	    <td><%= user.received_messages.length if user.received_messages %></td>
+  	    <td><%= user.phones.map(&:number).join ',' if user.phones %></td>
+        <td><%= user.birthday %></td>
+    <td><%= user.gender %></td>
+    <td><%= user.num_children %></td>
+    <td><%= user.marital_status %></td>
+        <td>
+          <%= link_to 'Edit', edit_user_path(user), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', user_path(user), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_user_path, :class => 'btn btn-primary' %>
+
+<%= paginate @users %>

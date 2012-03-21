@@ -1,0 +1,31 @@
+<% title "Messages" %>
+<h1><%= @title %></h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Application</th>
+      <th>Raw message</th>
+      <th>To phone</th>
+      <th>From phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @messages.each do |message| %>
+      <tr>
+        <td><%= message.time %></td>
+        <td><%= message.app.name if message.app%></td>
+        <td><%= message.raw_message %></td>
+        <td><%= message.recipient_phone.number if message.recipient_phone%></td>
+        <td><%= message.sender_phone.number if message.sender_phone %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= paginate @messages %>
+
+<%= link_to 'New', new_message_path, :class => 'btn btn-primary' %>

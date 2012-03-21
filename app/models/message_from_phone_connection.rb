@@ -1,0 +1,3 @@
+class MessageFromPhoneConnection < MessagePhoneConnection
+  
+end

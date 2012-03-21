@@ -1,0 +1,27 @@
+<h1>App</h1>
+
+<p>
+  <b>Name</b><br>
+  <%= @app.name %>
+</p>
+
+<p>
+  <b>Description</b><br>
+  <%= @app.description %>
+</p>
+
+<p>
+  <b>App code</b><br>
+  <%= @app.app_code %>
+</p>
+
+<p>
+  <b>Type</b><br>
+  <%= @app.type %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', apps_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_app_path(@app), :class => 'btn' %>
+  <%= link_to 'Delete', app_path(@app), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

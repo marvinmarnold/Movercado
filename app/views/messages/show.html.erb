@@ -1,0 +1,32 @@
+<h1>Message</h1>
+
+<p>
+  <b>Time</b><br>
+  <%= @message.time %>
+</p>
+
+<p>
+  <b>Raw message</b><br>
+  <%= @message.raw_message %>
+</p>
+
+<p>
+  <b>App</b><br>
+  <%= @message.app_id %>
+</p>
+
+<p>
+  <b>Sender</b><br>
+  <%= @message.sender_id %>
+</p>
+
+<p>
+  <b>Recipient</b><br>
+  <%= @message.recipient_id %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', messages_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_message_path(@message), :class => 'btn' %>
+  <%= link_to 'Delete', message_path(@message), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

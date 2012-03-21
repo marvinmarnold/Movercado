@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  birthday: 2012-03-20
+  gender: MyString
+  num_actor_codes_generated: 1
+  num_children: 1
+  martial_status: MyString
+  nickname: MyString
+
+two:
+  birthday: 2012-03-20
+  gender: MyString
+  num_actor_codes_generated: 1
+  num_children: 1
+  martial_status: MyString
+  nickname: MyString

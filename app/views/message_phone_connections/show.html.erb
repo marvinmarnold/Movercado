@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Message:</b>
+  <%= @message_phone_connection.message %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @message_phone_connection.phone %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @message_phone_connection.type %>
+</p>
+
+
+<%= link_to 'Edit', edit_message_phone_connection_path(@message_phone_connection) %> |
+<%= link_to 'Back', message_phone_connections_path %>

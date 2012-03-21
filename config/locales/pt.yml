@@ -1,0 +1,30 @@
+# Portuguese
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pt:
+  ipc_client_registration:
+    short_code: "Desculpa, o codigo digitado e curto. Verifique se nao esta a faltar algum digito."
+    invalid_characters: "Desculpa, o codigo digitado possui caracteres invalidos. Tente novamente."
+    ipc_on_self: "Desculpa, voce nao pode implementar actividades CIP para voce mesmo."
+    invalid_code: "Desculpa, voce digitou um codigo invalido"
+    already_used: "Desculpa, este codigo ja foi utilizado"
+    registered_agent: "Desculpa, voce esta cadastrado como um agente para este tipo de formacao"
+    already_attended: "Desculpa, voce ja participou deste tipo de sessao de CIP"
+    invalid_agent: "Desculpa, a pessoa que deu-lhe este cartao nao e um agente oficial/reconhecido."
+    thank_you_client: "Obrigado por atender a esta sessao de CIP. Quantos anos tem?"
+    thank_you_agent: "Obrigado por implementar mais esta sessao de CIP. A seguir, um codigo para ser entregue a um cliente: 123%{code}"
+  default_app:
+    process: "Desculpe, nao percebi a sua mensagem. Por favor, certifique-se que tenha escrito correctamente."
+    age_correct: "Obrigado pela sua resposta."
+    age_incorrect: "Obrigado pela sua resposta. Infelizmente, nao entendemos o que disse. Tente responder usando o formato numeros apenas (como 1 ou 12)."
+    invalid_user_app_var: "Sorry, %{value} %{for} is not %{equal} "
+    send_voucher: "Obrigado pela sua resposta. Como agradecimento, oferecemos o seguinte codigo de comprovante (voucher) para voce apresentar a um vendedor certificado e levantar um producto autorizado: %{app_code}%{actor_code}" 
+    action_on_self: "Sorry, you can't %{act} yourself"
+  ipc_client_registration_w_voucher:
+    already_redeemed: "Desculpe, esse comprovante ja foi utilizado."
+    thank_you_vendor: "Obrigado. Vocs acaba de receber XX MTN  em credito."
+    thank_you_client: "Transaccao efectuada. Voce acabou de usar o seu comprovante.   "   
+    not_vendor: "Desculpe, voce nao e um vendedor certificado."
+    not_client: "Desculpe, a pessoa que lhe entregou este cartao nao e autorizada"
+  data_collector_app:
+    wrong_role: "Sorry you are not approved to enter data for this application"

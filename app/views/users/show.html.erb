@@ -1,0 +1,37 @@
+<h1>User</h1>
+
+<p>
+  <b>Birthday</b><br>
+  <%= @user.birthday %>
+</p>
+
+<p>
+  <b>Gender</b><br>
+  <%= @user.gender %>
+</p>
+
+<p>
+  <b>Num actor codes generated</b><br>
+  <%= @user.num_actor_codes_generated %>
+</p>
+
+<p>
+  <b>Num children</b><br>
+  <%= @user.num_children %>
+</p>
+
+<p>
+  <b>Martial status</b><br>
+  <%= @user.marital_status %>
+</p>
+
+<p>
+  <b>Nickname</b><br>
+  <%= @user.nickname %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', users_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_user_path(@user), :class => 'btn' %>
+  <%= link_to 'Delete', user_path(@user), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

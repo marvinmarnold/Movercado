@@ -1,0 +1,22 @@
+<h1>Phone</h1>
+
+<p>
+  <b>Number</b><br>
+  <%= @phone.number %>
+</p>
+
+<p>
+  <b>Carrier</b><br>
+  <%= @phone.carrier %>
+</p>
+
+<p>
+  <b>User</b><br>
+  <%= @phone.user_id %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', phones_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_phone_path(@phone), :class => 'btn' %>
+  <%= link_to 'Delete', phone_path(@phone), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

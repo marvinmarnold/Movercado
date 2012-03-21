@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  role: MyString
+  times_interacted: 1
+  validated_times_interacted: 1
+  user: 
+  app: 
+
+two:
+  role: MyString
+  times_interacted: 1
+  validated_times_interacted: 1
+  user: 
+  app: 

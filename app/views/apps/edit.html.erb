@@ -1,0 +1,29 @@
+<%= form_for @app, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> App</legend>
+    <p>
+      <%= "App Code: #{@app.app_code}" %>
+    </p>
+    <p>
+      <%= "Type: #{titlize(@app.type)}" %>
+    </p>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :description, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :description, :class => 'text_area' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', apps_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

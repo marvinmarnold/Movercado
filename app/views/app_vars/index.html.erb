@@ -1,0 +1,26 @@
+<h1>App Vars</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @app_vars.each do |app_var| %>
+      <tr>
+        <td><%= app_var.id %></td>
+        <td><%= link_to app_var.name, app_var_path(app_var) %></td>
+        <td><%= app_var.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_app_var_path(app_var), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', app_var_path(app_var), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_app_var_path, :class => 'btn btn-primary' %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Message:</b>
+  <%= @message_tag_connection.message %>
+</p>
+
+<p>
+  <b>Tag:</b>
+  <%= @message_tag_connection.tag %>
+</p>
+
+
+<%= link_to 'Edit', edit_message_tag_connection_path(@message_tag_connection) %> |
+<%= link_to 'Back', message_tag_connections_path %>

@@ -1,0 +1,17 @@
+<h1>App Var</h1>
+
+<p>
+  <b>Name</b><br>
+  <%= @app_var.name %>
+</p>
+
+<p>
+  <b>App</b><br>
+  <%= @app_var.app_id %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', app_vars_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_app_var_path(@app_var), :class => 'btn' %>
+  <%= link_to 'Delete', app_var_path(@app_var), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

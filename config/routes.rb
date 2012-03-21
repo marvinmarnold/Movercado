@@ -1,4 +1,19 @@
 Movercado::Application.routes.draw do
+  resources :app_vars
+  resources :message_phone_connections
+  resources :message_tag_connections
+  resources :tags
+  resources :user_app_vars
+  resources :actor_codes
+  resources :messages
+  resources :phones
+  resources :users
+  resources :apps
+
+  root :to => 'messages#index'
+  match '/kannel_start_point', :to => "messages#kannel_start_point"
+  match '/created_codes', :to => "actor_codes#listing"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

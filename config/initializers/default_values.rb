@@ -1,0 +1,5 @@
+TITLE = "Movercado"
+DEFAULT_APP_CODE = "000"
+SISLOG_NUMBER = "+91013"
+DEFAULT_APP_NAME = "Default Application"
+DEFAULT_APP_DESCRIPTION = "This application gets used when a message is received that does not correspond to a valid application and does not answer any outstanding questions associated with that user"

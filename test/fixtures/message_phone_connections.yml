@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  message: 
+  phone: 
+  type: 
+
+two:
+  message: 
+  phone: 
+  type: 
