@@ -3,7 +3,7 @@ class VoucherRedemptionApp < App
     begin
       actor_code = message_object.get_actor_code_object
     rescue
-      respond_to_message(message_object, (I18n.t 	'SOMETHING'), "error")
+      respond_to_message(message_object, (I18n.t 	'ipc_client_registration.invalid_code'), "error")
     end
     
     #TODO: Times used should be application specific
