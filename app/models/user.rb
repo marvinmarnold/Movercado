@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 						:through => :phones
 	has_many 	:received_messages,
 						:through => :phones
+						
+  has_many :actor_codes
   
   accepts_nested_attributes_for :phones
 end

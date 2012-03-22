@@ -22,8 +22,9 @@ en:
     action_on_self: "Sorry, you can't %{act} yourself"
   ipc_client_registration_w_voucher:
     already_redeemed: "Desculpe, esse comprovante ja foi utilizado."
-    thank_you_vendor: "Obrigado. Vocs acaba de receber XX MTN  em credito."
-    thank_you_client: "Transaccao efectuada. Voce acabou de usar o seu comprovante.   "   
+    thank_you_vendor: "Obrigado. Este codigo e valido, por favor ofereca uma garrafa de Certeza ao seu cliente e voce recebera XX MTN."
+    thank_you_client: "Transaccao efectuada. Voce acabou de usar o seu comprovante." 
+    thank_you_client2: "%{code}"  
     not_vendor: "Desculpe, voce nao e um vendedor certificado."
     not_client: "Desculpe, a pessoa que lhe entregou este cartao nao e autorizada"
   data_collector_app:
