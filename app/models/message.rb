@@ -22,7 +22,9 @@ class Message < ActiveRecord::Base
 	  something_tried = false
 	  begin
      	app = App.find_by_app_code(get_app_code)
-    	if app #is part of an app
+    rescue Exception::RuntimeError
+    end
+		if app #is part of an app
        	app.process(self)
        	something_tried = true
      	else
@@ -33,9 +35,6 @@ class Message < ActiveRecord::Base
      		app.process(self)
     	end
     	self.update_attributes(:app => app)
-    rescue
-    end
-		
   end
   
   def self.default_app_code

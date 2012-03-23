@@ -19,7 +19,7 @@
         <td><%= link_to user.created_at, user_path(user) %></td>
         <td><%= user.sent_messages.length if user.sent_messages %></td>
   	    <td><%= user.received_messages.length if user.received_messages %></td>
-  	    <td><%= user.phones.map(&:number).join ',' if user.phones %></td>
+  	    <td><%= user.phones.map(&:number).join ", " if user.phones %></td>
         <td><%= user.birthday %></td>
     <td><%= user.gender %></td>
     <td><%= user.num_children %></td>

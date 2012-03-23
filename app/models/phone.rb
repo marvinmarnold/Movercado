@@ -1,5 +1,5 @@
 class Phone < ActiveRecord::Base
-  belongs_to :user, :dependent => :destroy
+  belongs_to :user
   has_many 	:message_phone_connections
   has_many 	:messages,
   					:through => :message_phone_connections

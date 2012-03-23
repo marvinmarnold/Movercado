@@ -5,6 +5,9 @@ class ActorCode < ActiveRecord::Base
   attr_accessor :num_to_generate
   after_create :generate_actor_code
   
+  validates :app_id, :presence => true
+  validates :user_id, :presence => true
+  
    def generate_actor_code
     num_codes_created = user.num_actor_codes_generated
     self.code = add_noise(generate_raw_code(num_codes_created))

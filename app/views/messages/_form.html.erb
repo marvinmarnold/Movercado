@@ -1,41 +1,10 @@
-<%= form_for @message, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @message, :html => { :class => 'form-horizontal' } do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> Message</legend>
-
-    <div class="control-group">
-      <%= f.label :time, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.datetime_select :time, :class => 'datetime_select' %>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <%= f.label :raw_message, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :raw_message, :class => 'text_field' %>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <%= f.label :app_id, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.number_field :app_id, :class => 'number_field' %>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <%= f.label :sender_id, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.number_field :sender_id, :class => 'number_field' %>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <%= f.label :recipient_id, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.number_field :recipient_id, :class => 'number_field' %>
-      </div>
-    </div>
+    <%= f.association :app %>
+    <%= f.input :recipient %>
+    <%= f.input :raw_message, :label => "Message", :as => :text, :input_html => { :rows => 3 } %>
+    
 
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>

@@ -4,6 +4,7 @@ class VoucherRedemptionApp < App
       actor_code = message_object.get_actor_code_object
     rescue
       respond_to_message(message_object, (I18n.t 	'ipc_client_registration.invalid_code'), "error")
+      return false
     end
     
     #TODO: Times used should be application specific
@@ -26,7 +27,8 @@ class VoucherRedemptionApp < App
       respond_to_message(message_object, (I18n.t 	'ipc_client_registration_w_voucher.thank_you_vendor'), 
 																														"successful, question, unanswered")
 		  client_object = User.find(client_id)
-		  new_code = client_object.actor_codes.create!
+		  new_code = client_object.actor_codes.create!(:app => self)
+		  
 		  send_message_to_phone(client_object.phones.first,  
 																			(I18n.t 'ipc_client_registration_w_voucher.thank_you_client'),
 																			 "successful")

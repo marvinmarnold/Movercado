@@ -25,6 +25,8 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
+    @user.phones.build
+    @user.user_app_vars.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +37,8 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    @user.phones.build
+    @user.user_app_vars.build
   end
 
   # POST /users
@@ -60,7 +64,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to users_path, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

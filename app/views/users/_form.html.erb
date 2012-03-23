@@ -1,16 +1,24 @@
 <%= simple_form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> User</legend>
-
-    <%= f.input :birthday, :include_blank => true %>
-    <%= f.input :num_actor_codes_generated %>
-    <%= f.input :num_children %>
-    <%= f.input :gender %>
-    <%= f.input :marital_status %>
+    <h3>User</h3>
+    <%= f.input :birthday, :include_blank => true, :start_year => Date.today.year - 90, :end_year => Date.today.year %>
+    <%= f.input :num_children%>
+    <%= f.input :gender, :as => :radio_buttons, :collection => User.genders %>
+    <%= f.input :marital_status, :as => :radio_buttons, :collection => User.marital_statuses %>
     <%= f.input :nickname %>
     
-    <%= f.association :phones, :collection => @user.phones.order("number"), :label_method => lambda { |phone| "#{phone.number}" } %>
+    <h3>Phones</h3>
+    <%= f.simple_fields_for :phones do |builder| %>
+      <%= builder.input :number%>
+      <%= builder.input :_destroy, :as => :radio_buttons, :label => "Delete phone?" %>
+    <% end %>
     
+    <h3>Application specific attributes</h3>
+    <%= f.simple_fields_for :user_app_vars do |builder| %>
+      <%= builder.association :app%>
+      <%= builder.input :role %>
+    <% end %>
 
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
