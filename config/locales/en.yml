@@ -30,4 +30,4 @@ en:
   data_collector_app:
     wrong_role: "Sorry you are not approved to enter data for this application"
   voucher_request_app:
-    code: "This is the voucher you can show at a store %{code}"
+    code: "Apresente este comprovante ao Troca Aki para receber uma garrafa de Certeza %{code}"
