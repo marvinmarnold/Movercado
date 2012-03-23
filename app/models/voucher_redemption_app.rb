@@ -32,8 +32,8 @@ class VoucherRedemptionApp < App
 		  send_message_to_phone(client_object.phones.first,  
 																			(I18n.t 'ipc_client_registration_w_voucher.thank_you_client'),
 																			 "successful")
-		send_message_to_phone(client_object.phones.first,  
-																			(I18n.t 'ipc_client_registration_w_voucher.thank_you_client2', :code => "#{self.app_code}#{new_code.code}".upcase),
+		#send_message_to_phone(client_object.phones.first,  
+		#																	(I18n.t 'ipc_client_registration_w_voucher.thank_you_client2', :code => "#{self.app_code}#{new_code.code}".upcase),
 																			 "successful")
 		end
 	end
