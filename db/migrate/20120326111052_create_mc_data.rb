@@ -1,0 +1,77 @@
+class CreateMcData < ActiveRecord::Migration
+  def change
+    create_table :mc_data do |t|
+      t.float :init_vital_ta_num
+      t.float :init_vital_ta_denom
+      t.float :init_vital_fr
+      t.float :init_vital_fc
+      t.float :init_vital_temp
+      t.float :init_vital_peso
+      t.float :init_anest
+      t.boolean :init_anormalidade
+      t.text :init_anormalidade_exp
+      t.boolean :can_cm
+      t.string :consent_name
+      t.date :consent_date_signe
+      t.date :consent_date_guardian_signed
+      t.string :consent_nome_us
+      t.string :notas_profissional
+      t.date :notas_date
+      t.string :notas_assistente
+      t.datetime :notas_start
+      t.datetime :notas_end
+      t.string :notas_tipo
+      t.float :notas_anesteica
+      t.float :notas_lidocaina
+      t.boolean :notas_paracetamol
+      t.boolean :notas_medicacao  
+      t.string :notas_medicacao_exp
+      t.float :notas_sinas_ta_num
+      t.float :notas_sinas_ta_denom
+      t.float :notas_sinais_fc
+      t.float :notas_sinais_fr
+      t.float :notas_sinais_temp
+      t.boolean :notas_complicacoes
+      t.boolean :notas_resultado
+      t.text :notas_comentarios
+      t.string :pos_profissional
+      t.date :pos_data
+      t.text :pos_estado
+      t.boolean :pos_complicaoes
+      t.text :pos_comentarios
+      t.string :pos2_profissional
+      t.date :pos2_data
+      t.text :pos2_estada
+      t.boolean :pos2_complicacoes
+      t.text :pos2_comentarios
+      t.string :registo_us
+      t.string :registo_utente_first
+      t.string :registo_utente_last
+      t.string :registo_address
+      t.string :registo_phone_string
+      t.date :registo_data
+      t.string :registo_nid
+      t.integer :registo_anos
+      t.string :registo_estado
+      t.string :registo_referenciado
+      t.string :registo_motivo
+      t.boolean :registo_testagem_aconselhado
+      t.boolean :regito_testado
+      t.string :registo_resultado
+      t.boolean :registo_its
+      t.string :registo_tratemento
+      t.boolean :registo_operacao
+      t.text :registo_operacao_exp
+      t.boolean :registo_med
+      t.text :registo_med_exp
+      t.boolean :registo_aler
+      t.text :registo_aler_exp
+      t.string :registo_manifestacao
+      t.string :registo_referenciado_outro
+      t.string :registo_motivo_outro
+  t.string :registo_tratemento_outro
+  t.string :registo_manifestacao_exp
+      t.timestamps
+    end
+  end
+end

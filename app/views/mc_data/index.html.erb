@@ -1,0 +1,147 @@
+<h1>Listing mc_data</h1>
+
+<table>
+  <tr>
+    <th>Init vital ta num</th>
+    <th>Init vital ta denom</th>
+    <th>Init vital fr</th>
+    <th>Init vital temp</th>
+    <th>Init vital peso</th>
+    <th>Init anest</th>
+    <th>Init anormalidade</th>
+    <th>Init anormalidade exp</th>
+    <th>Can cm</th>
+    <th>Consent name</th>
+    <th>Consent date signe</th>
+    <th>Consent date guardian signed</th>
+    <th>Consent nome us</th>
+    <th>Notas profissional</th>
+    <th>Notas date</th>
+    <th>Notas assistente</th>
+    <th>Notas start</th>
+    <th>Notas end</th>
+    <th>Notas tipo</th>
+    <th>Notas anesteica</th>
+    <th>Notas lidocaina</th>
+    <th>Notas paracetamol</th>
+    <th>Notas sinas ta num</th>
+    <th>Notas sinas ta denom</th>
+    <th>Notas sinais fc</th>
+    <th>Notas sinais fr</th>
+    <th>Notas sinais temp</th>
+    <th>Notas complicacoes</th>
+    <th>Notas resultado</th>
+    <th>Notas comentarios</th>
+    <th>Pos profissional</th>
+    <th>Pos data</th>
+    <th>Pos estado</th>
+    <th>Pos complicaoes</th>
+    <th>Pos comentarios</th>
+    <th>Pos2 profissional</th>
+    <th>Pos2 data</th>
+    <th>Pos2 estada</th>
+    <th>Pos2 complicacoes</th>
+    <th>Pos2 comentarios</th>
+    <th>Registo us</th>
+    <th>Registo utente first</th>
+    <th>Registo utente last</th>
+    <th>Registo address</th>
+    <th>Registo phone string</th>
+    <th>Registo data</th>
+    <th>Registo nid</th>
+    <th>Registo anos</th>
+    <th>Registo estado</th>
+    <th>Registo referenciado</th>
+    <th>Registo motivo</th>
+    <th>Registo testagem aconselhado</th>
+    <th>Regito testado</th>
+    <th>Registo resultado</th>
+    <th>Registo its</th>
+    <th>Registo tratemento</th>
+    <th>Registo operacao</th>
+    <th>Registo operacao exp</th>
+    <th>Registo med</th>
+    <th>Registo med exp</th>
+    <th>Registo aler</th>
+    <th>Registo aler exp</th>
+    <th>Registo manifestacao</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mc_data.each do |mc_datum| %>
+  <tr>
+    <td><%= mc_datum.init_vital_ta_num %></td>
+    <td><%= mc_datum.init_vital_ta_denom %></td>
+    <td><%= mc_datum.init_vital_fr %></td>
+    <td><%= mc_datum.init_vital_temp %></td>
+    <td><%= mc_datum.init_vital_peso %></td>
+    <td><%= mc_datum.init_anest %></td>
+    <td><%= mc_datum.init_anormalidade %></td>
+    <td><%= mc_datum.init_anormalidade_exp %></td>
+    <td><%= mc_datum.can_cm %></td>
+    <td><%= mc_datum.consent_name %></td>
+    <td><%= mc_datum.consent_date_signe %></td>
+    <td><%= mc_datum.consent_date_guardian_signed %></td>
+    <td><%= mc_datum.consent_nome_us %></td>
+    <td><%= mc_datum.notas_profissional %></td>
+    <td><%= mc_datum.notas_date %></td>
+    <td><%= mc_datum.notas_assistente %></td>
+    <td><%= mc_datum.notas_start %></td>
+    <td><%= mc_datum.notas_end %></td>
+    <td><%= mc_datum.notas_tipo %></td>
+    <td><%= mc_datum.notas_anesteica %></td>
+    <td><%= mc_datum.notas_lidocaina %></td>
+    <td><%= mc_datum.notas_paracetamol %></td>
+    <td><%= mc_datum.notas_sinas_ta_num %></td>
+    <td><%= mc_datum.notas_sinas_ta_denom %></td>
+    <td><%= mc_datum.notas_sinais_fc %></td>
+    <td><%= mc_datum.notas_sinais_fr %></td>
+    <td><%= mc_datum.notas_sinais_temp %></td>
+    <td><%= mc_datum.notas_complicacoes %></td>
+    <td><%= mc_datum.notas_resultado %></td>
+    <td><%= mc_datum.notas_comentarios %></td>
+    <td><%= mc_datum.pos_profissional %></td>
+    <td><%= mc_datum.pos_data %></td>
+    <td><%= mc_datum.pos_estado %></td>
+    <td><%= mc_datum.pos_complicaoes %></td>
+    <td><%= mc_datum.pos_comentarios %></td>
+    <td><%= mc_datum.pos2_profissional %></td>
+    <td><%= mc_datum.pos2_data %></td>
+    <td><%= mc_datum.pos2_estada %></td>
+    <td><%= mc_datum.pos2_complicacoes %></td>
+    <td><%= mc_datum.pos2_comentarios %></td>
+    <td><%= mc_datum.registo_us %></td>
+    <td><%= mc_datum.registo_utente_first %></td>
+    <td><%= mc_datum.registo_utente_last %></td>
+    <td><%= mc_datum.registo_address %></td>
+    <td><%= mc_datum.registo_phone_string %></td>
+    <td><%= mc_datum.registo_data %></td>
+    <td><%= mc_datum.registo_nid %></td>
+    <td><%= mc_datum.registo_anos %></td>
+    <td><%= mc_datum.registo_estado %></td>
+    <td><%= mc_datum.registo_referenciado %></td>
+    <td><%= mc_datum.registo_motivo %></td>
+    <td><%= mc_datum.registo_testagem_aconselhado %></td>
+    <td><%= mc_datum.regito_testado %></td>
+    <td><%= mc_datum.registo_resultado %></td>
+    <td><%= mc_datum.registo_its %></td>
+    <td><%= mc_datum.registo_tratemento %></td>
+    <td><%= mc_datum.registo_operacao %></td>
+    <td><%= mc_datum.registo_operacao_exp %></td>
+    <td><%= mc_datum.registo_med %></td>
+    <td><%= mc_datum.registo_med_exp %></td>
+    <td><%= mc_datum.registo_aler %></td>
+    <td><%= mc_datum.registo_aler_exp %></td>
+    <td><%= mc_datum.registo_manifestacao %></td>
+    <td><%= link_to 'Show', mc_datum %></td>
+    <td><%= link_to 'Edit', edit_mc_datum_path(mc_datum) %></td>
+    <td><%= link_to 'Destroy', mc_datum, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mc datum', new_mc_datum_path %>

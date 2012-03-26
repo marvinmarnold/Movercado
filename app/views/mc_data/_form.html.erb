@@ -1,0 +1,94 @@
+<%= simple_form_for(@mc_datum) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <h2>Ficha de registo para cicuncisao masculina</h2>
+    <%= f.input :registo_us, :label => "Nome da unidade sanitaria" %>
+    <%= f.input :registo_utente_first, :label => "Primeiro nome do utente" %>
+    <%= f.input :registo_utente_last, :label => "Nome do utente" %>
+    <%= f.input :registo_address, :label => "Residencia" %>
+    <%= f.input :registo_phone_string, :label => "Telepone" %>
+    <%= f.input :registo_data, :label => "Data", :include_blank => true %>
+    <%= f.input :registo_nid, :label => "N.I.D" %>
+    <%= f.input :registo_anos, :label => "Idade (anos)" %>
+    <%= f.input :registo_estado, :label => "Estado civil", :collection => estados_civil, :as => :select %>
+    <%= f.input :registo_referenciado, :label => "Utente referenciado pelo", :collection => referenciados, :as => :select %>
+    <%= f.input :registo_referenciado_outro, :label => "Se outro, especifique" %>
+    <%= f.input :registo_motivo, :label => "Motivo principal para CM", :collection => motivos, :as => :select %>
+    <%= f.input :registo_motivo_outro, :label => "Se outro, especifique" %>
+    <%= f.input :registo_testagem_aconselhado, :label => "O utente foi aconselhado para a testagem ao HIV?", :as => :radio, :collection => ["Sim", "Nao"] %>
+    <%= f.input :regito_testado, :label => "O utente foi testado para HIV como parte do processo de CM?", :as => :radio, :collection => ["Sim", "Nao"] %>
+    <%= f.input :registo_resultado, :label => "Caso tenha sido testado, qual foi o resultado para o HIV?", :collection => results, :as => :select %>
+    <%= f.input :registo_its, :label => "O utente teve alguma infeccao de Transmissao Sexual (ITS) nos ultimos 3 meses?", :as => :radio, :collection => ["Sim", "Nao"] %>
+    <%= f.input :registo_tratemento, :label => "O utente esta em tratamento para alguma das condicoes abaixo?", :collection => treatments, :as => :select %>
+     <%= f.input :registo_tratemento_outro, :label => "Si outra, especifique" %>
+    <%= f.input :registo_operacao, :label => "O utente alguma vez foi submetido a operacao ciurgica?", :as => :radio, :collection => ["Sim", "Nao"] %>
+    <%= f.input :registo_operacao_exp, :label => "Se sim, especifique" %>
+    <%= f.input :registo_med, :label => "O utente esta actualmente sob alguma medicacao?", :as => :radio, :collection => ["Sim", "Nao"] %>
+    <%= f.input :registo_med_exp, :label => "Se sim, especifique" %>
+    <%= f.input :registo_aler, :label => "O utente apresentou alguma vez reaccao alergica medicacao?", :as => :radio, :collection => ["Sim", "Nao"] %>
+    <%= f.input :registo_aler_exp, :label => "Se sim, especifique" %>
+     <%= f.input :registo_manifestacao, :label => "Assinale a manifestacao ou doenca que o paciente possa apresentar", :collection => manifestations, :as => :select %>
+         <%= f.input :registo_manifestacao_exp, :label => "Se outra, especifique" %>
+    
+    <h2>Exam fisico</h2>
+    <h3>Sinais vitais</h3>
+    <%= f.input :init_vital_ta_num, :label => "VA (top)" %>
+    <%= f.input :init_vital_ta_denom, :label => "VA (bottom)" %>
+    <%= f.input :init_vital_fc, :label => "FC" %>
+    <%= f.input :init_vital_fr, :label => "FR" %>
+    <%= f.input :init_vital_temp, :label => "Temperatura" %>
+    <%= f.input :init_vital_peso, :label => "Peso (kg)" %>
+    <%= f.input :init_anest, :label => "Quantidade max. do anestesico" %>
+    <%= f.input :init_anormalidade, :label => "Alguma anormalidade significativa detectada no exame genital?", :as => :radio, :collection => ["Sim", "Nao"] %>
+    <%= f.input :init_anormalidade_exp, :label => "Se sim, especifique" %>
+    <%= f.input :can_cm, :label => "O utente esta apto para a CM?", :as => "radio", :collection => ["Sim", "Nao"] %>
+    
+     <h2>Consentimento informado para a circuncisao</h2>
+    <%= f.input :consent_name, :label => "Nome do profissional responsavel" %>
+    <%= f.input :consent_date_signe, :label => "Date signed", :include_blank => true %>
+    <%= f.input :consent_date_guardian_signed, :label => "Date signed by guardian", :include_blank => true %>
+    <%= f.input :consent_nome_us, :label => "Nome da US" %>
+    
+    <h2>Notas da cirurgia</h2>
+    <%= f.input :notas_profissional, :label => "Profissional de saude" %>
+    <%= f.input :notas_date, :label => "Data" , :include_blank => true%>
+    <%= f.input :notas_assistente, :label => "Assiente" %>
+    <%= f.input :notas_start, :label => "Duracao das" , :include_blank => true%>
+    <%= f.input :notas_end, :label => "ate as" , :include_blank => true%>
+    <%= f.input :notas_tipo, :label => "FC", :collection => types, :as => :select %>
+    <%= f.input :notas_anesteica, :label => "Quantidade de anestesico (ml)" %>
+    <%= f.input :notas_lidocaina, :label => "Lidocaina (%)" %>
+    <%= f.input :notas_paracetamol, :label => "Administrado paracetamol antes procedimento?", :as => :radio, :collection => ["Sim", "Nao"] %>
+    <%= f.input :notas_medicacao, :label => "Foi necessaria medicacao extra para controlo da dor?", :as => :radio, :collection => ["Sim", "Nao"]  %>
+    <%= f.input :notas_medicacao_exp, :label => "Se sim, especifique" %>
+    <h3>Sinais vitais</h3>
+    <%= f.input :notas_sinas_ta_num, :label => "VA (top)" %>
+    <%= f.input :notas_sinas_ta_denom, :label => "VA (bottom)" %>
+    <%= f.input :notas_sinais_fc, :label => "FC" %>
+    <%= f.input :notas_sinais_fr, :label => "FR" %>
+    <%= f.input :notas_sinais_temp, :label => "Temperatura" %>
+    <%= f.input :notas_complicacoes, :label => "Complicacaoes", :as => :radio, :collection => ["Sim", "Nao"] %>
+    <%= f.input :notas_resultado, :label => "O resultado da cirurgia foi", :as => :radio, :collection => ["Satisfatorio", "Nao satisfatorio"]%>
+    <%= f.input :notas_comentarios, :label => "Comentarios" %>
+    
+    <h2>Avaliacao pos-operatoria</h2>
+    <h3>48 horas pos-ciurgia</h3>
+    <%= f.input :pos_profissional, :label => "Profissional de saude" %>
+    <%= f.input :pos_data, :label => "Data", :include_blank => true %>
+    <%= f.input :pos_estado, :label => "Estado da Ferida operatorio" %>
+    <%= f.input :pos_complicaoes, :label => "Complicacoes", :as => :radio, :collection => ["Sim", "Nao"] %>
+    <%= f.input :pos_comentarios, :label => "Comentarios" %>
+    <h3>7 dia pos-ciurgia</h3>
+    <%= f.input :pos2_profissional, :label => "Profissional de saude" %>
+    <%= f.input :pos2_data, :label => "Data", :include_blank => true %>
+    <%= f.input :pos2_estada, :label => "Estado da Ferida operatorio" %>
+    <%= f.input :pos2_complicacoes, :label => "Complicacoes", :as => :radio, :collection => ["Sim", "Nao"]  %>
+    <%= f.input :pos2_comentarios, :label => "Comentarios" %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit%>
+  </div>
+<% end %>
