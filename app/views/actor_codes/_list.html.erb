@@ -4,6 +4,7 @@
       <th>User ID</th>
       <th>App</th>
       <th>Code</th>
+      <th>Complete Code (App & Actor Codes)</th>
       <th>Times used</th>
       <th>Actions</th>
     </tr>
@@ -14,6 +15,7 @@
         <td><%= actor_code.user.id %></td>
         <td><%= "#{actor_code.app.name} (#{actor_code.app.app_code})" %></td>
         <td><%= actor_code.code %></td>
+        <td><%= "#{actor_code.app.app_code}#{actor_code.code}" %></td>
         <td><%= actor_code.times_used %></td>
         <td>
           <%= link_to 'Edit', edit_actor_code_path(actor_code), :class => 'btn btn-mini' %>
