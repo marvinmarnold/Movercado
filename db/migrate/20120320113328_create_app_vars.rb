@@ -3,6 +3,7 @@ class CreateAppVars < ActiveRecord::Migration
     create_table :app_vars do |t|
       t.string :name
       t.references :app
+      t.integer :count
 
       t.timestamps
     end
