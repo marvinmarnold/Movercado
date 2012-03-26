@@ -44,7 +44,7 @@ class VoucherRedemptionApp < App
 			count ||= 0
 			count += 1
 			app_var.update_attributes(:count => count)
-			send_message_to_number("+258825077787", "#{self.name} just processed the #{count} voucher. It was #{message_object.sender_phone.number}s #{sales} sale", "")
+			send_message_to_number("%2B258825077787", "#{self.name} just processed the #{count} voucher. It was #{message_object.sender_phone.number}s #{sales} sale", "")
 		#send_message_to_phone(client_object.phones.first,  
 		#																	(I18n.t 'ipc_client_registration_w_voucher.thank_you_client2', :code => "#{self.app_code}#{new_code.code}".upcase),
 																			# "successful")

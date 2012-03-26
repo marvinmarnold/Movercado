@@ -9,7 +9,7 @@ class App < ActiveRecord::Base
   end
     def send_message_to_number(number, text_to_send, tags)
   	recipient_phone = Phone.find_by_number(number)
-  	recipient_phone ||= User.create!.phones.build(:number => number)
+  	recipient_phone ||= User.create!.phones.create!(:number => number)
   	send_message_to_phone(recipient_phone, text_to_send, tags)
   end
   
