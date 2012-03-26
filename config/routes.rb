@@ -1,4 +1,6 @@
 Movercado::Application.routes.draw do
+  resources :mc_data
+
   resources :app_vars
   resources :message_phone_connections
   resources :message_tag_connections
