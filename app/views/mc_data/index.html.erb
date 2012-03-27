@@ -1,6 +1,7 @@
 <h1>Listing mc_data</h1>
 
-<table>
+<table class="table table-striped">
+  <thead>
   <tr>
     <th>Init vital ta num</th>
     <th>Init vital ta denom</th>
@@ -69,7 +70,8 @@
     <th></th>
     <th></th>
   </tr>
-
+  </thead>
+  <tbody>
 <% @mc_data.each do |mc_datum| %>
   <tr>
     <td><%= mc_datum.init_vital_ta_num %></td>
@@ -140,8 +142,9 @@
     <td><%= link_to 'Destroy', mc_datum, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
 <br />
 
-<%= link_to 'New Mc datum', new_mc_datum_path %>
+<%= link_to 'New', new_mc_datum_path, :class => 'btn btn-primary' %>

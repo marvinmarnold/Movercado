@@ -6,6 +6,8 @@
     <%= f.input :name %>
     <%= f.input :description, :input_html => { :rows => 5 } %>
 
+    <%= render 'apps/app_vars', :f => f %>
+
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to 'Cancel', apps_path, :class => 'btn' %>

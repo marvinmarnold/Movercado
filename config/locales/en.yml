@@ -29,5 +29,8 @@ en:
     not_client: "A pessoa que lhe entregou este cartao nao e autorizada."
   data_collector_app:
     wrong_role: "Nao esta autorizado a inserir informacao para esta aplicacao."
+    success: "Thank you, your data has been successfully registered"
+    invalid_input: "Your input was malformed. Please make sure it is two characters followed by a number like AB12 CD34"
   voucher_request_app:
     code: "Apresente este codigo a um representante Troca Aki e receba uma garrafa de Certeza gratis. %{code}"
+

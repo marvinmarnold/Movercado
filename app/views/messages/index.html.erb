@@ -14,7 +14,7 @@
   <tbody>
     <% @messages.each do |message| %>
       <tr>
-        <td><%= message.time %></td>
+        <td><%= message.time.strftime("%m/%d/%Y @ %I:%M%p") %></td>
         <td><%= message.app.name if message.app%></td>
         <td><%= message.raw_message %></td>
         <td><%= message.recipient_phone.number if message.recipient_phone%></td>

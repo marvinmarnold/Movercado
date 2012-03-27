@@ -2,7 +2,7 @@ class ActorCodesController < ApplicationController
   # GET /actor_codes
   # GET /actor_codes.json
   def index
-    @actor_codes = ActorCode.order("created_at desc").page params[:page]
+    @actor_codes = ActorCode.order("updated_at desc").page params[:page]
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @actor_codes }

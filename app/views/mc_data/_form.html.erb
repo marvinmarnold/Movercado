@@ -1,7 +1,8 @@
-<%= simple_form_for(@mc_datum) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @mc_datum, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Mc Datum</legend>
 
-  <div class="form-inputs">
+
     <h2>Ficha de registo para cicuncisao masculina</h2>
     <%= f.input :registo_us, :label => "Nome da unidade sanitaria" %>
     <%= f.input :registo_utente_first, :label => "Primeiro nome do utente" %>
@@ -86,9 +87,11 @@
     <%= f.input :pos2_complicacoes, :label => "Complicacoes", :as => :radio, :collection => ["Sim", "Nao"]  %>
     <%= f.input :pos2_comentarios, :label => "Comentarios" %>
 
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit%>
-  </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', mc_data_path, :class => 'btn' %>
+    </div>
+  </fieldset>
 <% end %>

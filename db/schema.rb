@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120326111052) do
+ActiveRecord::Schema.define(:version => 20120327153124) do
 
   create_table "actor_codes", :force => true do |t|
     t.string   "code"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20120326111052) do
     t.integer  "count"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "str_val"
   end
 
   add_index "app_vars", ["app_id"], :name => "index_app_vars_on_app_id"
@@ -163,6 +164,19 @@ ActiveRecord::Schema.define(:version => 20120326111052) do
   end
 
   add_index "phones", ["user_id"], :name => "index_phones_on_user_id"
+
+  create_table "sales_data", :force => true do |t|
+    t.date     "week_start"
+    t.date     "week_end"
+    t.integer  "user_id"
+    t.string   "product"
+    t.boolean  "promotion"
+    t.float    "quantity"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sales_data", ["user_id"], :name => "index_sales_data_on_user_id"
 
   create_table "tags", :force => true do |t|
     t.string   "name"

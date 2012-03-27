@@ -18,6 +18,8 @@
     <%= f.simple_fields_for :user_app_vars do |builder| %>
       <%= builder.association :app%>
       <%= builder.input :role %>
+      <%= builder.input :times_interacted %>
+      <%= builder.input :validated_times_interacted %>
     <% end %>
 
     <div class="form-actions">

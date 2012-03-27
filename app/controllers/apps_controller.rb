@@ -25,6 +25,7 @@ class AppsController < ApplicationController
   # GET /apps/new.json
   def new
     @app = App.new
+    @app.app_vars.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,12 +36,14 @@ class AppsController < ApplicationController
   # GET /apps/1/edit
   def edit
     @app = App.find(params[:id])
+    @app.app_vars.build
   end
 
   # POST /apps
   # POST /apps.json
   def create
-    @app = App.new(params[:app])
+    model = params[:app].delete(:type).constantize
+    @app = model.new(params[:app])
 
     respond_to do |format|
       if @app.save
@@ -57,9 +60,9 @@ class AppsController < ApplicationController
   # PUT /apps/1.json
   def update
     @app = App.find(params[:id])
-
+      
     respond_to do |format|
-      if @app.update_attributes(params[:app])
+      if @app.update_attributes!(params[:app])
         format.html { redirect_to @app, notice: 'App was successfully updated.' }
         format.json { head :no_content }
       else

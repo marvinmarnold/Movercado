@@ -1,0 +1,37 @@
+<h1>Sales Datum</h1>
+
+<p>
+  <b>Week start</b><br>
+  <%= @sales_datum.week_start %>
+</p>
+
+<p>
+  <b>Week end</b><br>
+  <%= @sales_datum.week_end %>
+</p>
+
+<p>
+  <b>User</b><br>
+  <%= @sales_datum.user_id %>
+</p>
+
+<p>
+  <b>Product</b><br>
+  <%= @sales_datum.product %>
+</p>
+
+<p>
+  <b>Promotion</b><br>
+  <%= @sales_datum.promotion %>
+</p>
+
+<p>
+  <b>Quantity</b><br>
+  <%= @sales_datum.quantity %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', sales_data_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_sales_data_path(@sales_datum), :class => 'btn' %>
+  <%= link_to 'Delete', sales_data_path(@sales_datum), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

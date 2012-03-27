@@ -5,21 +5,23 @@
   <thead>
     <tr>
       <th>Created at</th>
+       <th>Type</th>
       <th>Name</th>
-      <th>Description</th>
       <th>App code</th>
-      <th>Type</th>
+      <th>Description</th>
+      <th>Messages processed </th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @apps.each do |app| %>
       <tr>
-      <td><%= app.created_at %></td>
-        <td><%= link_to app.name, app_path(app) %></td>
-        <td><%= app.description %></td>
-        <td><%= app.app_code %></td>
-        <td><%= titlize(app.type) %></td>
+      <td><%= app.created_at.strftime("%m/%d/%Y @ %I:%M%p") %></td>
+      <td><%= titlize(app.type) %></td>
+      <td><%= link_to app.name, app_path(app) %></td>
+      <td><%= app.app_code %></td>
+      <td><%= app.description %></td>
+      <td><%= app.messages.length %></td>
         <td>
           <%= link_to 'Edit', edit_app_path(app), :class => 'btn btn-mini' %>
           <%= link_to 'Destroy', app_path(app), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>

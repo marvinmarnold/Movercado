@@ -2,35 +2,40 @@ class DataCollectorApp < App
   
   def process(message_object)
     user_app_var = message_object.sender.user_app_vars.find_by_app_id(self.id)
-    if user_app_var && user_app_var.role == 'approved'
-      input = message_object.message.split(' ')
-      counter = 0
-      while counter < input.length
-        key = input[counter]
-        value = input[counter+1]
-        
-        #TODO: right now going to assume that each value is a number but that should be customizable
-		    if is_numeric?(value)
-		      key_matches = false
-		      #TODO: should make a loop that exits when finds matching key
-		      self.app_vars.each do |app_var|
-		        if key == app_var.string_field
-		          
-        end
-		      #TODO: if key is valid character
-		      #else
-		      #end
-		      #add new app_var with key value and user
-        else
-          
+    if user_app_var && user_app_var.role == 'sales'
+      input = message_object.raw_message[3,message_object.raw_message.length-3].delete(' ')
+      if input.match(/\A(\w{2}\d+)+\Z/)
+        well_formed = true
+        input.scan(/\w{2}\d+/).each do |data|
+          product = data[0]
+          promotion = data[1]
+          quantity = data[2,data.length-2]
+          unless is_numeric?(quantity) && !(self.app_vars.where(:name => "product").collect{ |t| t.str_val.downcase} & ["#{product}".downcase]).empty? && !(self.app_vars.where(:name => "promotion").collect{ |t| t.str_val.downcase} & ["#{promotion}".downcase]).empty?
+            well_formed = false
+          end
         end
         
-        counter += 2
+      else
+      respond_to_message(message_object, (I18n.t 'data_collector_app.invalid_input'), 'input,error')
+      return false
       end
     else
       respond_to_message(message_object, (I18n.t 'data_collector_app.wrong_role'), 'input,misuse')
+      return false
     end
-  
+    
+    #TODO: this should be moved up so that we don't loop twice
+    if well_formed
+      input.scan(/\w{2}\d+/).each do |data|
+          product = data[0]
+          promotion = data[1]
+          quantity = data[2,data.length-2]
+            message_object.sender.sales_datum.create!(:product => SalesDatum.products[product], :quantity => quantity, :promotion => ((promotion == "p")? true : false)) 
+          end
+      respond_to_message(message_object, (I18n.t 'data_collector_app.success'), 'input,error')
+    else
+      respond_to_message(message_object, (I18n.t 'data_collector_app.invalid_input'), 'input,error')
+    end
 		
   end
   
@@ -41,4 +46,5 @@ class DataCollectorApp < App
   def is_numeric?(value)
     true if Float(value) rescue false
   end
+  
 end

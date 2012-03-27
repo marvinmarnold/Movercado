@@ -16,7 +16,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= link_to user.created_at, user_path(user) %></td>
+        <td><%= link_to user.created_at.strftime("%m/%d/%Y @ %I:%M%p"), user_path(user) %></td>
         <td><%= user.sent_messages.length if user.sent_messages %></td>
   	    <td><%= user.received_messages.length if user.received_messages %></td>
   	    <td><%= user.phones.map(&:number).join ", " if user.phones %></td>

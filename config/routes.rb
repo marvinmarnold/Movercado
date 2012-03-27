@@ -1,4 +1,6 @@
 Movercado::Application.routes.draw do
+  resources :sales_data
+
   resources :mc_data
 
   resources :app_vars
@@ -15,6 +17,10 @@ Movercado::Application.routes.draw do
   root :to => 'messages#index'
   match '/kannel_start_point', :to => "messages#kannel_start_point"
   match '/created_codes', :to => "actor_codes#listing"
+  
+  resources :voucher_request_apps, :controller => "apps", :type => "VoucherRequestApp"
+  resources :voucher_redemption_apps, :controller => "apps", :type => "VoucherRedemptionApp"
+  resources :data_collector_apps, :controller => "apps", :type => "DataCollectorApp"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

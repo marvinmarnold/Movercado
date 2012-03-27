@@ -1,0 +1,28 @@
+<h1>Sales Datums</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Week start</th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sales_data.each do |sales_datum| %>
+      <tr>
+        <td><%= link_to sales_datum.week_start, sales_datum_path(sales_datum) %></td>
+        <td><%= sales_datum.product %></td>
+        <td><%= sales_datum.quantity %></td>
+        <td><%= sales_datum.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_sales_datum_path(sales_datum), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', sales_datum_path(sales_datum), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_sales_datum_path, :class => 'btn btn-primary' %>

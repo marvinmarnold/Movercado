@@ -10,5 +10,19 @@ namespace :db do
     VoucherRedemptionApp.create!(:app_code => "333", :name => "Random indirect ", :description => "Random gives card to claim voucher")
     VoucherRequestApp.create!(:app_code => "222", :name => "Pilot PSI request", :description => "Demoing voucher request")
     VoucherRequestApp.create!(:app_code => "444", :name => "Pilot random request", :description => "Demoing voucher request")
+    
+    sales = DataCollectorApp.create!(:app_code => "123", :name => "Pilot data collection", :description => "Test of SMS automated data entry")
+    
+    sales.app_vars.create!(:name => "product", :str_val => "c")
+    sales.app_vars.create!(:name => "product", :str_val => "x")
+    sales.app_vars.create!(:name => "product", :str_val => "s")
+    sales.app_vars.create!(:name => "product", :str_val => "a")
+    sales.app_vars.create!(:name => "product", :str_val => "y")
+    sales.app_vars.create!(:name => "product", :str_val => "f")
+    sales.app_vars.create!(:name => "product", :str_val => "g")
+    
+    sales.app_vars.create!(:name => "promotion", :str_val => "p")
+    sales.app_vars.create!(:name => "promotion", :str_val => "v")
+    
   end
 end

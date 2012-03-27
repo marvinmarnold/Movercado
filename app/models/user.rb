@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 						:through => :phones
 						
   has_many :actor_codes
+  has_many :sales_datum
   
   accepts_nested_attributes_for :phones, :reject_if => lambda { |p| p[:number].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :user_app_vars, :reject_if => lambda { |v| v[:role].blank? }

@@ -1,0 +1,18 @@
+<%= simple_form_for @sales_datum, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Sales Datum</legend>
+
+    <%= f.input :week_start %>
+    <%= f.input :week_end %>
+    <%= f.association :user, :label_method => lambda { |u| "#{u.phones.first.number}"} %>
+    <%= f.input :product, :as => :select, :collection => SalesDatum.products %>
+    <%= f.input :promotion, :as => :radio %>
+    <%= f.input :quantity %>
+
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', sales_data_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

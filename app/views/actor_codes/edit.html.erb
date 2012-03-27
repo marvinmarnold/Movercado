@@ -1,34 +1,13 @@
-<%= form_for @actor_code, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @actor_code, :html => { :class => 'form-horizontal' } do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> Actor Code</legend>
-
-    <div class="control-group">
-      <%= f.label :code, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :code, :class => 'text_field' %>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <%= f.label :times_used, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.number_field :times_used, :class => 'number_field' %>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <%= f.label :user_id, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.number_field :user_id, :class => 'number_field' %>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <%= f.label :app_id, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.number_field :app_id, :class => 'number_field' %>
-      </div>
-    </div>
+    
+    <p>Code: <%= @actor_code.code.to_str.upcase %></p>
+    <p>Complete code (App Code & Actor Code): <%= "#{@actor_code.app.app_code}#{@actor_code.code}".upcase %></p>
+    #TODO: show all phones
+    <p>Phone: <%= @actor_code.user.phones.first.number %></p>
+    <%= f.input :times_used %>
+    <%= f.association :app, :label_method => lambda { |app| "#{app.name}"} %>
 
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>

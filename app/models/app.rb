@@ -1,4 +1,8 @@
 class App < ActiveRecord::Base
+  has_many :app_vars
+  has_many :messages
+  
+  accepts_nested_attributes_for :app_vars, :reject_if => lambda { |v| v[:name].blank? }
   
   def process(message)
 		respond_to_message(message, (I18n.t 'default_app.process'), "default")

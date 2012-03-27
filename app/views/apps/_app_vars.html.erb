@@ -1,0 +1,6 @@
+    <h3>Extra Application Variables</h3>
+    <%= f.simple_fields_for :app_vars do |builder| %>
+      <%= builder.input :name%>
+      <%= builder.input :count %>
+      <%= builder.input :str_val %>
+    <% end %>

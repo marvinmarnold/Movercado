@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  week_start: 2012-03-27
+  week_end: 2012-03-27
+  user: 
+  product: MyString
+  promotion: false
+  quantity: 1.5
+
+two:
+  week_start: 2012-03-27
+  week_end: 2012-03-27
+  user: 
+  product: MyString
+  promotion: false
+  quantity: 1.5
