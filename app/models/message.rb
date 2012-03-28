@@ -60,11 +60,14 @@ class Message < ActiveRecord::Base
   def send_SMS(text, recipient_phone, tags, app_id)
   	admin_phone = Message.admin_phone_for_number(recipient_phone.number)
   	begin
+  	  
    		RestClient.get 'localhost:13014/cgi-bin/sendsms', {:params => {:username => 'kannel',
                                                                      :password => 'kannel',
                                                                      :to => recipient_phone.number,
                                                                      :text => text}}
+      Rails.logger.info("arsf4s")
     rescue
+      Rails.logger.info("greaadtaa")
     end
    	self.update_attributes(:time => Time.now, :raw_message => text,
                            :app_id => app_id)
