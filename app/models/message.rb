@@ -50,11 +50,13 @@ class Message < ActiveRecord::Base
   end
   
   #should eventually return the correct psi number given the corresponding carrier
-  def self.admin_phone_for_number(number)
+    def self.admin_phone_for_number(number)
   	admin_phone = Phone.find_by_number(Phone.sislog_number)
-    admin_phone ||= Phone.create!(:number => Phone.sislog_number, :user => User.create!)
+  	unless admin_phone
+  	  admin_phone = Phone.create!(:number => Phone.sislog_number, :user => User.create!)
+	  end
+	  admin_phone
   end
-  
   def send_SMS(text, recipient_phone, tags, app_id)
   	admin_phone = Message.admin_phone_for_number(recipient_phone.number)
   	begin

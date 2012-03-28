@@ -11,7 +11,7 @@ namespace :db do
     VoucherRequestApp.create!(:app_code => "222", :name => "Pilot PSI request", :description => "Demoing voucher request")
     VoucherRequestApp.create!(:app_code => "444", :name => "Pilot random request", :description => "Demoing voucher request")
     
-    sales = DataCollectorApp.create!(:app_code => "123", :name => "Pilot data collection", :description => "Test of SMS automated data entry")
+    sales = DataCollectorApp.create!(:app_code => "232", :name => "Pilot data collection", :description => "Test of SMS automated data entry")
     
     sales.app_vars.create!(:name => "product", :str_val => "c")
     sales.app_vars.create!(:name => "product", :str_val => "x")
