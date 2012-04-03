@@ -18,6 +18,9 @@ Movercado::Application.routes.draw do
   match '/kannel_start_point', :to => "messages#kannel_start_point"
   match '/created_codes', :to => "actor_codes#listing"
   
+  
+  match '/export_messages',				:to => 'messages#export'
+  
   resources :voucher_request_apps, :controller => "apps", :type => "VoucherRequestApp"
   resources :voucher_redemption_apps, :controller => "apps", :type => "VoucherRedemptionApp"
   resources :data_collector_apps, :controller => "apps", :type => "DataCollectorApp"

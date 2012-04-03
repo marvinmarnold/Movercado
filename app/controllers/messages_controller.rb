@@ -1,4 +1,34 @@
+require 'csv'
 class MessagesController < ApplicationController
+  
+   def export
+    @messages = Message.order("time desc")
+    outfile = "movercado_messages_" + Time.now.strftime("%m-%d-%Y") + ".csv"
+    
+    csv_data = CSV.generate do |csv|
+      csv << [
+      "Time",
+      "App Code",
+      "To Number",
+      "From Number",
+      "Raw Message"
+      ]
+      @messages.each do |message|
+        csv << [
+        message.time,
+        message.app.app_code,
+        message.sender_phone.number,
+        message.recipient_phone.number,
+        message.raw_message
+        ]
+      end
+  	end
+  send_data csv_data,
+    :type => 'text/csv; charset=iso-8859-1; header=present',
+    :disposition => "attachment;filename=#{outfile}"
+
+  flash[:notice] = "Export complete!"
+	end
   
   #this is the method that gets called when a message is received through 
   def kannel_start_point

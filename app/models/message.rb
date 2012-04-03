@@ -65,9 +65,7 @@ class Message < ActiveRecord::Base
                                                                      :password => 'kannel',
                                                                      :to => recipient_phone.number,
                                                                      :text => text}}
-      Rails.logger.info("arsf4s")
     rescue
-      Rails.logger.info("greaadtaa")
     end
    	self.update_attributes(:time => Time.now, :raw_message => text,
                            :app_id => app_id)

@@ -1,6 +1,10 @@
 <% title "Messages" %>
 <h1><%= @title %></h1>
 
+<%= form_tag(export_messages_path, :method=>'get') do |f|%>
+	<%= submit_tag 'Export to CSV'%>
+<% end %>
+
 <table class="table table-striped">
   <thead>
     <tr>
