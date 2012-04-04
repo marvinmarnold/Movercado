@@ -12,6 +12,8 @@ gem "twitter-bootstrap-rails"
 gem "kaminari"
 gem "simple_form"
 gem "rest-client"
+gem 'omniauth-facebook'
+gem 'koala'
 
 # Gems used only for assets and not required
 # in production environments by default.
