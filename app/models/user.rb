@@ -29,6 +29,6 @@ class User < ActiveRecord::Base
   end
   
   def self.admin
-    Phone.find_by_number(Phone.sislog_number).user
+    Phone.find_or_create_by_number(Phone.sislog_number).user
   end
 end
