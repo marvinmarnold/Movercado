@@ -29,6 +29,11 @@ class User < ActiveRecord::Base
   end
   
   def self.admin
-    Phone.find_or_create_by_number(Phone.sislog_number).user
+    p = Phone.find_by_number(Phone.sislog_number)
+  	unless p
+  	  p = Phone.create!(:number => Phone.sislog_number, :user => User.create!)
+	  end
+	  return p.user
   end
+  
 end
