@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :num_children
       t.string :marital_status
       t.string :nickname
-      t.string :tokenL
+      t.string :token
 
       t.timestamps
     end
