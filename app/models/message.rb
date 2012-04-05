@@ -123,19 +123,27 @@ class Message < ActiveRecord::Base
     end
   end
   
+  #TODO: use regex
   def get_actor_code
       sanitize_and_get_range(3, 9)
   end
   
   def get_app_code
-      sanitize_and_get_range(0, 3)
+      sanitize.match(/^(\s*\S{1}){3}/)[0]
   end
   
-  def sanitize_and_get_range(first, last)
+  def get_actual_message
+    self.raw_message[self.raw_message.match(/^(\s*\S{1}){3}/)[0].length,self.raw_message.length]
+  end
+    
+  def sanitize
     message_text = self.raw_message
     message_text = message_text.downcase
     message_text = message_text.delete(' ')
     message_text = Message.replace_ambig_characters(message_text)
+  end  
+  def sanitize_and_get_range(first, last)
+    message_text = sanitize
     if message_text.length >= last
       return message_text[first, last]
     else
