@@ -92,6 +92,6 @@ class UsersController < ApplicationController
     #uid = omniauth["uid"]
     updated_token = omniauth["credentials"]["token"]
     
-    User.admin.update_attributes(:key => updated_token)
+    User.admin.update_attributes(:token => updated_token)
   end
 end
