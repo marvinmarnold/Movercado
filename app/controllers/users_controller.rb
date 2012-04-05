@@ -93,5 +93,6 @@ class UsersController < ApplicationController
     updated_token = omniauth["credentials"]["token"]
     
     User.admin.update_attributes(:token => updated_token)
+    redirect_to root_path
   end
 end
