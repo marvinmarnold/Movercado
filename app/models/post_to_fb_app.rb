@@ -3,7 +3,7 @@ class PostToFbApp < App
     @graph ||= Koala::Facebook::API.new(User.admin.token)
     accounts = @graph.get_connections('me', 'accounts')
     accounts.each do |account|
-      if account["name"] == "SouMaisJeitosa"
+      if account["name"] == "soumaisjeitosaa"
         page_graph = Koala::Facebook::GraphAPI.new(account["access_token"])
         page_graph.put_object(account["id"], "feed", :message => message_object.get_actual_message)
       end
