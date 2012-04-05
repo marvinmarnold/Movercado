@@ -12,6 +12,9 @@
     <%= f.input :description, :input_html => { :rows => 5 } %>
     
     <%= render 'apps/app_vars', :f => f %>
+	  
+	  <a href='/auth/facebook'>
+    <%= image_tag "facebook_32.png", :size => "32x32"%>
 
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>

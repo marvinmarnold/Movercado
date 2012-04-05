@@ -5,6 +5,8 @@ class CreateApps < ActiveRecord::Migration
       t.text :description
       t.string :app_code
       t.string :type
+      t.string :key
+      t.string :token
 
       t.timestamps
     end

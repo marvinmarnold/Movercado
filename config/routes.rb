@@ -1,4 +1,6 @@
 Movercado::Application.routes.draw do
+  devise_for :users
+
   resources :sales_data
 
   resources :mc_data
@@ -24,7 +26,8 @@ Movercado::Application.routes.draw do
   resources :voucher_request_apps, :controller => "apps", :type => "VoucherRequestApp"
   resources :voucher_redemption_apps, :controller => "apps", :type => "VoucherRedemptionApp"
   resources :data_collector_apps, :controller => "apps", :type => "DataCollectorApp"
-
+  resources :post_to_fb_apps, :controller => "apps", :type => "PostToFbApp"
+  match '/auth/:provider/callback',   :to => 'users#create_with_omniauth'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

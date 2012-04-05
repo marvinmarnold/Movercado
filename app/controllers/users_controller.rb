@@ -84,4 +84,14 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def create_with_omniauth
+    omniauth = request.env["omniauth.auth"]
+    #Rails.logger.info("Omniauth return: #{omniauth}")
+    #provider = omniauth["provider"]
+    #uid = omniauth["uid"]
+    updated_token = omniauth["credentials"]["token"]
+    
+    User.admin.update_attributes(:key => updated_token)
+  end
 end

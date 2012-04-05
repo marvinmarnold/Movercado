@@ -14,6 +14,7 @@ gem "simple_form"
 gem "rest-client"
 gem 'omniauth-facebook'
 gem 'koala'
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.

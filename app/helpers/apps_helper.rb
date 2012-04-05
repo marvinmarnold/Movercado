@@ -6,6 +6,8 @@ module AppsHelper
       return "Voucher Request Application"
     elsif type == "DataCollectorApp"
       return "Data Collection Application"
+    elsif type == "PostToFbApp"
+      return "Post to Facebook Application" 
     elsif type
       return "FILL IN IN APPS HELPER" 
     else
@@ -15,6 +17,6 @@ module AppsHelper
   
   def app_types
     #["Data collection", "Voucher Redemption"]
-    {"Data Collection" => "DataCollectorApp", "Voucher Request" => "VoucherRequestApp", "Voucher Redemption" => "VoucherRedemptionApp" }
+    {"Data Collection" => "DataCollectorApp", "Voucher Request" => "VoucherRequestApp", "Voucher Redemption" => "VoucherRedemptionApp" , "Post To Facebook" => "PostToFbApp"}
   end
 end

@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20120327153124) do
     t.text     "description"
     t.string   "app_code"
     t.string   "type"
+    t.string   "key"
+    t.string   "token"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -198,14 +200,29 @@ ActiveRecord::Schema.define(:version => 20120327153124) do
   add_index "user_app_vars", ["user_id"], :name => "index_user_app_vars_on_user_id"
 
   create_table "users", :force => true do |t|
+    t.string   "email",                     :default => "", :null => false
+    t.string   "encrypted_password",        :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",             :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.date     "birthday"
     t.string   "gender"
     t.integer  "num_actor_codes_generated", :default => 0
     t.integer  "num_children"
     t.string   "marital_status"
     t.string   "nickname"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
+    t.string   "token"
+    t.string   "key"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
