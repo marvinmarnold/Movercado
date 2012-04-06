@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120327153124) do
+ActiveRecord::Schema.define(:version => 20120406064741) do
 
   create_table "actor_codes", :force => true do |t|
     t.string   "code"
@@ -180,6 +180,17 @@ ActiveRecord::Schema.define(:version => 20120327153124) do
 
   add_index "sales_data", ["user_id"], :name => "index_sales_data_on_user_id"
 
+  create_table "stock_transactions", :force => true do |t|
+    t.string   "warehouse"
+    t.float    "quantity"
+    t.integer  "product"
+    t.datetime "time"
+    t.boolean  "is_entry"
+    t.integer  "special"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "tags", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -206,6 +217,7 @@ ActiveRecord::Schema.define(:version => 20120327153124) do
     t.integer  "num_children"
     t.string   "marital_status"
     t.string   "nickname"
+    t.string   "token"
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
   end

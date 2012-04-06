@@ -1,0 +1,15 @@
+<%= simple_form_for @stock_transaction, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Stock Transaction</legend>
+    <%= f.input :warehouse, :as => :select, :collection => warehouses %>
+    <%= f.input :time %>
+    <%= f.input :product, :as => :select, :collection => products %>
+    <%= f.input :is_entry, :as => :radio, :collection => directions %>
+    <%= f.input :quantity %>
+    
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', stock_transactions_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

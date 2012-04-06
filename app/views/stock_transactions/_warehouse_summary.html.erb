@@ -1,0 +1,23 @@
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Quantity In</th>
+      <th>Quantity Out</th>
+      <th>Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% products.each_pair do |product_name, product_code| %>
+      <tr>
+        <td><%= product_name %></td>
+        <td><%= quantity(1, product_code) %></td>
+        <td><%= quantity(2, product_code) %></td>
+        <td><%= quantity(3, product_code) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Add Stock Transaction', new_stock_transaction_path, :class => 'btn btn-primary' %>

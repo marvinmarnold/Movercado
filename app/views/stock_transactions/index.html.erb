@@ -1,0 +1,31 @@
+<% title "Stock Management" %>
+<h1><%= @title %></h1>
+
+<%= simple_form_for :warehouse_select, :url => url_for(:action => 'index', :controller => 'stock_transactions'),
+                  :method => 'get' do |f| %>
+  <fieldset>
+    <%= f.input :warehouse, :as => :select, :collection => warehouses %>
+    
+    <div class="form-actions">
+      <%= f.submit "Update Warehouse", :class => 'btn btn-primary' %>
+    </div>
+  </fieldset>
+<% end %>
+
+<div class="tabbable">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#warehouses" data-toggle="tab">Warehouse Summary</a></li>
+    <li><a href="#transactions" data-toggle="tab">Stock Transactions</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="warehouses">
+      <%= render 'stock_transactions/warehouse_summary' %>
+    </div>
+    <div class="tab-pane" id="transactions">
+      <%= render 'stock_transactions/stock_transactions' %>
+    </div>
+  </div>
+</div>
+
+
+

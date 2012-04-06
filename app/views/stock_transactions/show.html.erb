@@ -1,0 +1,7 @@
+<h1>Stock Transaction</h1>
+
+<div class="form-actions">
+  <%= link_to 'Back', stock_transactions_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_stock_transaction_path(@stock_transaction), :class => 'btn' %>
+  <%= link_to 'Delete', stock_transaction_path(@stock_transaction), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

@@ -1,4 +1,6 @@
 Movercado::Application.routes.draw do
+  resources :stock_transactions
+
   devise_for :users
 
   resources :sales_data
@@ -22,6 +24,7 @@ Movercado::Application.routes.draw do
   
   
   match '/export_messages',				:to => 'messages#export'
+  match '/warehouse_summary',				:to => 'stock_transactions#warehouse_summary'
   
   resources :voucher_request_apps, :controller => "apps", :type => "VoucherRequestApp"
   resources :voucher_redemption_apps, :controller => "apps", :type => "VoucherRedemptionApp"

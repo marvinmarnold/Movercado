@@ -25,3 +25,8 @@ jQuery ->
 		    var regexp = new RegExp("new_" + association, "g");
 		    $(link).parent().before(content.replace(regexp, new_id));
 	}
+	
+$('a[data-toggle="tab"]').on('shown', function (e) {
+  e.target // activated tab
+  e.relatedTarget // previous tab
+})

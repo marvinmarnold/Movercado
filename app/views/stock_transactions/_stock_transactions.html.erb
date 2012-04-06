@@ -1,0 +1,32 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Warehuose</th>
+      <th>Date</th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Direction</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stock_transactions.each do |stock_transaction| %>
+      <tr>
+        <td><%= stock_transaction.id %></td>
+        <td><%= stock_transaction.warehouse %></td>
+        <td><%= stock_transaction.time %></td>
+        <td><%= products.index(stock_transaction.product) %></td>
+        <td><%= stock_transaction.quantity %></td>
+        <td><%= directions.index(stock_transaction.is_entry) %></td>
+        <td>
+          <%= link_to 'Edit', edit_stock_transaction_path(stock_transaction), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', stock_transaction_path(stock_transaction), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'New', new_stock_transaction_path, :class => 'btn btn-primary' %>
