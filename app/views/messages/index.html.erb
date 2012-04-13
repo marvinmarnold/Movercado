@@ -5,6 +5,8 @@
 	<%= submit_tag 'Export to CSV'%>
 <% end %>
 
+<%= link_to 'Send a message', new_message_path, :class => 'btn btn-primary' %>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -32,4 +34,4 @@
 
 <%= paginate @messages %>
 
-<%= link_to 'New', new_message_path, :class => 'btn btn-primary' %>
+<%= link_to 'Send a message', new_message_path, :class => 'btn btn-primary' %>

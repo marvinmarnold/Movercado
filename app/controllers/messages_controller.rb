@@ -113,7 +113,7 @@ class MessagesController < ApplicationController
         recipient_phone = Phone.find_by_number(@message.number)
   	    recipient_phone ||= User.create!.phones.create!(:number => @message.number)
         @message.send_SMS(@message.raw_message, recipient_phone, "", @message.app.id)
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
+        format.html { redirect_to messages_path, notice: 'Message was successfully sent.' }
         format.json { render json: @message, status: :created, location: @message }
       else
         format.html { render action: "new" }
