@@ -3,9 +3,9 @@ class PostToFbApp < App
     @graph ||= Koala::Facebook::API.new(User.admin.token)
     accounts = @graph.get_connections('me', 'accounts')
     accounts.each do |account|
-      if account["name"] == "SouMaisJeitosa"
+      if account["name"] == "Sou Mais Jeitosa"
         page_graph = Koala::Facebook::API.new(account["access_token"])
-        page_graph.put_object(account["id"], "feed", :message => "SouMaisJeitosa recebeu este SMS: #{message_object.get_actual_message}")
+        page_graph.put_object(account["id"], "feed", :message => "Sou Mais Jeitosa recebeu este SMS: #{message_object.get_actual_message}")
       end
     end
     respond_to_message(message_object, (I18n.t 'post_to_fb_app.thank_you'), '')
