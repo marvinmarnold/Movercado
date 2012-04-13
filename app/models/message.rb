@@ -14,7 +14,12 @@ class Message < ActiveRecord::Base
 	has_one :sender,
 					:through => :sender_phone,
 					:source => :user
-					
+	
+	#accepts_nested_attributes_for :recipient_phone
+	#accepts_nested_attributes_for :recipient			
+	
+	attr_accessor :number	
+	
   @@default_app_code = DEFAULT_APP_CODE
   paginates_per 25
 					
@@ -57,6 +62,9 @@ class Message < ActiveRecord::Base
 	  end
 	  admin_phone
   end
+  
+
+  
   def send_SMS(text, recipient_phone, tags, app_id)
   	admin_phone = Message.admin_phone_for_number(recipient_phone.number)
   	begin

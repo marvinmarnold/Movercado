@@ -16,7 +16,7 @@ class MessagesController < ApplicationController
       @messages.each do |message|
         csv << [
         message.time,
-        message.app.app_code,
+        (message.app)? message.app.app_code : "NONE",
         message.sender_phone.number,
         message.recipient_phone.number,
         message.raw_message
@@ -90,6 +90,7 @@ class MessagesController < ApplicationController
   # GET /messages/new.json
   def new
     @message = Message.new
+    #@message.build_message_to_phone_connection.build_phone
 
     respond_to do |format|
       format.html # new.html.erb
@@ -109,6 +110,9 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
+        recipient_phone = Phone.find_by_number(@message.number)
+  	    recipient_phone ||= User.create!.phones.create!(:number => @message.number)
+        @message.send_SMS(@message.raw_message, recipient_phone, "", @message.app.id)
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render json: @message, status: :created, location: @message }
       else

@@ -3,8 +3,8 @@
 
 en:
   ipc_client_registration:
-    short_code: "O codigo introduzido esta incompleto. Verifique o codigo do cartão e tente de novo."
-    invalid_characters: "O codigo introduzido nao esta correcto. Verifique o código do cartão e tente de novo."
+    short_code: "O codigo introduzido esta incompleto. Verifique o codigo do cartao e tente de novo."
+    invalid_characters: "O codigo introduzido nao esta correcto. Verifique o código do cartao e tente de novo."
     ipc_on_self: "Voce nao pode implementar actividades  para si mesmo."
     invalid_code: "O codigo introduzido e invalido. Verifique o código do cartao e tente de novo"
     already_used: "Este codigo ja foi utilizado"
@@ -16,7 +16,7 @@ en:
   default_app:
     process: "Resposta nao reconhecida. Por favor, certifique-se que tenha escrito correctamente."
     age_correct: "Obrigado pela sua resposta."
-    age_incorrect: "Resposta nao reconhecida. Responda usando apenas números."
+    age_incorrect: "Resposta nao reconhecida. Responda usando apenas numeros."
     invalid_user_app_var: "Sorry, %{value} %{for} is not %{equal} "
     send_voucher: "Obrigado pela sua resposta. Como agradecimento, oferecemos o seguinte codigo. Apresente o codigo a um vendedor certificado e levante um produto autorizado: %{app_code}%{actor_code}" 
     action_on_self: "Sorry, you can't %{act} yourself"
@@ -34,5 +34,5 @@ en:
   voucher_request_app:
     code: "Apresente este codigo a um representante Troca Aki e receba uma garrafa de Certeza gratis. %{code}"
   post_to_fb_app:
-    thank_you: "Obrigado pela mensagem. Tenha um optimo dia da mulher mocambicana. Para veres a tua messagem acessa www.facebook.com/soumaisjeitosaa"
+    thank_you: "Obrigado pela mensagem. Tenha um optimo dia da mulher mocambicana. Para veres a tua messagem acessa www.facebook.com/soumaisjeitosa"
 
