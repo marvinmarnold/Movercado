@@ -4,7 +4,8 @@
     <%= f.association :app %>
     <%= f.input :number, :hint => "Number should start with +258" %>
 
-    <%= f.input :raw_message, :label => "Message", :as => :text, :input_html => { :rows => 3 } %>
+    <%= f.input :raw_message, :label => "Message", :as => :text, :input_html => { :rows => 3 }, 
+    :hint => "Remind them that they shouldn't try to reply to this message" %>
     
 
     <div class="form-actions">
